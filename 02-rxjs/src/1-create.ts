@@ -37,7 +37,9 @@ function createUnsubscribeButton(subscription: Subscription) {
   button.onclick = () => subscription.unsubscribe();
 }
 
-//execInterval();
-// const sub = execInterval();
-const sub = execCreate();
-createUnsubscribeButton(sub);
+export function main1() {
+  //execInterval();
+  // const sub = execInterval();
+  const sub = execCreate();
+  createUnsubscribeButton(sub);
+}
