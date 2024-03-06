@@ -5,7 +5,7 @@ function execRange(): Subscription {
   return range(1, 100)
     .pipe(
       filter((x) => x % 2 === 0),
-      map((x) => x + 1)
+      map((x) => x + 1),
     )
     .subscribe((x) => console.log(x));
 }
@@ -14,7 +14,7 @@ function execInterval(): Subscription {
   return interval(500)
     .pipe(
       map((x) => x * x),
-      take(20)
+      take(20),
     )
     .subscribe((x) => console.log(x));
 }
