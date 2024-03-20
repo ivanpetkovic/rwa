@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/1-create.ts",
+  entry: "./src/main.ts",
   devtool: "inline-source-map",
   module: {
     rules: [
@@ -20,4 +20,3 @@ module.exports = {
     filename: "bundle.js",
   },
 };
-

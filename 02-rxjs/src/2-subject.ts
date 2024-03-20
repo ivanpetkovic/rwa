@@ -35,7 +35,8 @@ function createUnsubscribeButton(action: Function) {
 // Subject ~= Event emitter
 // Every Subject is an Observable and an Observer. You can subscribe to a Subject,
 // and you can call next to feed values as well as error and complete.
-
-const subject$ = subscribeToSubject();
-execIntervalUntil(subject$);
-createUnsubscribeButton(() => stopEmitWithDelay(subject$));
+export function main2() {
+  const subject$ = subscribeToSubject();
+  execIntervalUntil(subject$);
+  createUnsubscribeButton(() => stopEmitWithDelay(subject$));
+}

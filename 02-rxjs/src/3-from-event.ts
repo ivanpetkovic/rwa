@@ -11,7 +11,7 @@ function logMouseMove() {
   fromEvent(document, "mousemove")
     .pipe(
       sampleTime(1000),
-      map((ev: MouseEvent) => ({ x: ev.screenX, y: ev.screenY }))
+      map((ev: MouseEvent) => ({ x: ev.screenX, y: ev.screenY })),
     )
     .subscribe((coords) => console.log(coords));
 }
@@ -23,10 +23,12 @@ function createTitleInputElement() {
     .pipe(
       debounceTime(500),
       map((ev: InputEvent) => (<HTMLInputElement>ev.target).value),
-      filter((text) => text.length >= 3)
+      filter((text) => text.length >= 3),
     )
     .subscribe((movies) => console.log(movies));
 }
 
-// logMouseMove();
-createTitleInputElement();
+export function main3() {
+  // logMouseMove();
+  createTitleInputElement();
+}
