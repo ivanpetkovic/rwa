@@ -1,0 +1,32 @@
+{
+  "movies": [
+    {
+      "id": "rambo",
+      "title": "Rambo",
+      "year": 1985,
+      "score": 9,
+      "image": ""
+    },
+    {
+      "id": "rocky",
+      "title": "Rocky I",
+      "year": 1987,
+      "score": 8,
+      "image": ""
+    },
+    {
+      "id": "fight_club",
+      "title": "Fight club",
+      "year": 2000,
+      "score": 9,
+      "image": ""
+    },
+    {
+      "id": "rambo4",
+      "title": "Rambo II",
+      "year": 1988,
+      "score": 7,
+      "image": ""
+    }
+  ]
+}
