@@ -7,10 +7,11 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePreviewComponent } from './components/movie-preview/movie-preview.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent, MoviesListComponent, MovieDetailsComponent, MoviePreviewComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, StoreModule.forRoot({}, {})],
   providers: [],
   bootstrap: [AppComponent],
 })
