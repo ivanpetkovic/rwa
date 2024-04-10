@@ -1,0 +1,10 @@
+<p>Movies list</p>
+
+<ul>
+  <li *ngFor="let movie of movie$ | async">
+    <app-movie-preview
+      [film]="movie"
+      (selektovan)="onSelect($event)"
+    ></app-movie-preview>
+  </li>
+</ul>
