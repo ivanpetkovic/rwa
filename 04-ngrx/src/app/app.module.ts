@@ -8,10 +8,21 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePreviewComponent } from './components/movie-preview/movie-preview.component';
 import { StoreModule } from '@ngrx/store';
+import { movieReducer } from './store/movie.reducer';
 
 @NgModule({
-  declarations: [AppComponent, MoviesListComponent, MovieDetailsComponent, MoviePreviewComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, StoreModule.forRoot({}, {})],
+  declarations: [
+    AppComponent,
+    MoviesListComponent,
+    MovieDetailsComponent,
+    MoviePreviewComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot({ movies: movieReducer }, {}),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

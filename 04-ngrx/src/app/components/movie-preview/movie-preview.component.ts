@@ -13,9 +13,7 @@ export class MoviePreviewComponent {
   @Output()
   public selektovan: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
-    this.film = new Movie('lotr', 'Lord of the Rings', 2000, 9);
-  }
+  constructor() {}
 
   onClick(ev: Event) {
     // console.log(ev);
