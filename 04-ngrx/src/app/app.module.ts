@@ -8,6 +8,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePreviewComponent } from './components/movie-preview/movie-preview.component';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { movieReducer } from './store/movie.reducer';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { movieReducer } from './store/movie.reducer';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({ movies: movieReducer }, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 125 }),
   ],
   providers: [],
   bootstrap: [AppComponent],

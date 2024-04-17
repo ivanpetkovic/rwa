@@ -11,14 +11,8 @@ import { addMovies } from './store/movie.actions';
 })
 export class AppComponent implements OnInit {
   title = '03-movies';
-  selectedMovie?: Movie;
 
   constructor(private store: Store) {}
-
-  onMovieSelected(movie: Movie) {
-    console.log('Iz app komponente, ', movie);
-    this.selectedMovie = movie;
-  }
 
   ngOnInit() {
     const movies = [

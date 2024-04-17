@@ -3,13 +3,13 @@ import { Movie } from '../models/movie';
 import * as actions from './movie.actions';
 
 export interface MovieState {
-  movies: Movie[];
-  selectedMovieId?: string;
+  moviesList: Movie[];
+  selectedMovieId: string | null;
 }
 
 export const initialState: MovieState = {
-  movies: [],
-  selectedMovieId: undefined,
+  moviesList: [],
+  selectedMovieId: null,
 };
 
 export const movieReducer = createReducer(
@@ -18,7 +18,13 @@ export const movieReducer = createReducer(
   on(actions.addMovies, (state, new_movies) => {
     return {
       ...state,
-      movies: new_movies.list,
+      moviesList: new_movies.list,
+    };
+  }),
+  on(actions.selectMovie, (state, action) => {
+    return {
+      ...state,
+      selectedMovieId: action.movieId,
     };
   }),
 );
