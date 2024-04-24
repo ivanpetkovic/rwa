@@ -1,14 +1,23 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { MovieState } from './movie.reducer';
+import { Movie } from '../models/movie';
 
 export const moviesFeature = createFeatureSelector<MovieState>('movies');
 
 export const selectAllMovies = createSelector(moviesFeature, (movies) => {
-  return movies.moviesList;
+  return movies.ids
+    .map((id) => movies.entities[id])
+    .filter((movie) => movie != undefined)
+    .map((movie) => movie as Movie);
 });
 
+export const selectAllMoviesAsDict = createSelector(
+  moviesFeature,
+  (movies) => movies.entities,
+);
+
 export const selectGreatMovies = createSelector(selectAllMovies, (list) => {
-  return list.filter((movie) => movie.score > 8);
+  return list.filter((movie) => movie && movie.score > 8);
 });
 
 export const selectCurrentMovieId = createSelector(
@@ -17,9 +26,9 @@ export const selectCurrentMovieId = createSelector(
 );
 
 export const selectCurrentMovie = createSelector(
-  selectAllMovies,
+  selectAllMoviesAsDict,
   selectCurrentMovieId,
-  (movies, movieId) => {
-    return movies.find((movie) => movie.id === movieId);
+  (moviesDict, movieId) => {
+    return movieId ? moviesDict[movieId] : undefined;
   },
 );

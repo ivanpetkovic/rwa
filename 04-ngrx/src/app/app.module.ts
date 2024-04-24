@@ -10,6 +10,8 @@ import { MoviePreviewComponent } from './components/movie-preview/movie-preview.
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { movieReducer } from './store/movie.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { MoviesEffect } from './store/movie.effect';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { movieReducer } from './store/movie.reducer';
     HttpClientModule,
     StoreModule.forRoot({ movies: movieReducer }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 125 }),
+    EffectsModule.forRoot(MoviesEffect),
   ],
   providers: [],
   bootstrap: [AppComponent],

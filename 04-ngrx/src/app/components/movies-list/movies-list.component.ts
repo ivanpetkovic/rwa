@@ -20,27 +20,15 @@ export class MoviesListComponent implements OnInit {
   // @Output()
   // public selektovan: EventEmitter<Movie> = new EventEmitter<Movie>();
 
-  constructor(
-    private service: MoviesService,
-    private store: Store<AppState>,
-  ) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.store.select(selectAllMovies).subscribe((list: Movie[]) => {
       this.movies = list;
     });
-    // this.store.select('movies').subscribe((slice: MovieState) => {
-    //   // console.log(slice);
-    //   this.movies = slice.moviesList;
-    // });
-    // this.movie$ = this.service.getMovies();
-    // this.service.getMovies().subscribe((movies) => (this.movies = movies));
   }
 
   onSelect(movieId: string) {
     this.store.dispatch(selectMovie({ movieId: movieId }));
-    // this.service.getMovie(movieId).subscribe((movie: Movie) => {
-    //   this.selektovan.emit(movie);
-    // });
   }
 }
