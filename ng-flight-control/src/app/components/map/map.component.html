@@ -1,0 +1,14 @@
+<div class="map-wrapper">
+    <img class="map" src="images/world_map.svg" />
+
+    <div class="map-overlay">
+        <div *ngFor="let aircraft of aircrafts$ | async" class="map-icon" [style.left.px]="aircraft.x" [style.top.px]="aircraft.y"
+            [style.transform]="'rotate(' + aircraft.attitude + 'deg)'">
+            <app-aircraft [aircraft]="aircraft"></app-aircraft>
+        </div>
+    </div>
+    <div class="map-overlay">
+        <div *ngFor="let airport of airports" class="map-icon" [style.left.px]="airport.x"
+            [style.top.px]="airport.y" title="{{airport.name}}" >●</div>
+    </div>
+</div>

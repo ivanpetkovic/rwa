@@ -1,0 +1,108 @@
+{
+  "aircrafts": [
+    {
+      "id": "A001",
+      "model": "Airbus A320",
+      "x": 873,
+      "y": 263,
+      "attitude": 90,
+      "speed": 850
+    },
+    {
+      "id": "A002",
+      "model": "Boeing 737",
+      "x": 128,
+      "y": 472,
+      "attitude": 270,
+      "speed": 820
+    },
+    {
+      "id": "A003",
+      "model": "Cessna 172",
+      "x": 560,
+      "y": 148,
+      "attitude": 180,
+      "speed": 200
+    },
+    {
+      "id": "A004",
+      "model": "Gulfstream G650",
+      "x": 789,
+      "y": 96,
+      "attitude": 45,
+      "speed": 900
+    },
+    {
+      "id": "A005",
+      "model": "F-16 Fighting Falcon",
+      "x": 342,
+      "y": 408,
+      "attitude": 315,
+      "speed": 1500
+    }
+  ],
+
+    "airports":
+    [
+  {
+    "id": "JFK",
+    "name": "John F. Kennedy International Airport (New York)",
+    "x": 145,
+    "y": 135
+  },
+  {
+    "id": "LHR",
+    "name": "London Heathrow Airport",
+    "x": 350,
+    "y": 105
+  },
+  {
+    "id": "CDG",
+    "name": "Charles de Gaulle Airport (Paris)",
+    "x": 365,
+    "y": 120
+  },
+  {
+    "id": "FRA",
+    "name": "Frankfurt Airport",
+    "x": 380,
+    "y": 115
+  },
+  {
+    "id": "DXB",
+    "name": "Dubai International Airport",
+    "x": 490,
+    "y": 185
+  },
+  {
+    "id": "HND",
+    "name": "Tokyo Haneda Airport",
+    "x": 790,
+    "y": 140
+  },
+  {
+    "id": "PEK",
+    "name": "Beijing Capital Airport",
+    "x": 730,
+    "y": 130
+  },
+  {
+    "id": "LAX",
+    "name": "Los Angeles International Airport",
+    "x": 80,
+    "y": 170
+  },
+  {
+    "id": "SYD",
+    "name": "Sydney Kingsford Smith Airport",
+    "x": 860,
+    "y": 370
+  },
+  {
+    "id": "JNB",
+    "name": "O. R. Tambo International Airport (Johannesburg)",
+    "x": 470,
+    "y": 390
+  }
+]
+}
