@@ -1,5 +1,5 @@
 import { from } from "rxjs";
-import { filter, map, pairwise, scan } from "rxjs/operators";
+import { filter, map, pairwise, scan } from "rxjs";
 
 export function main5() {
   // sum positive numbers in time

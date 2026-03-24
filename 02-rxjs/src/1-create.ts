@@ -1,5 +1,5 @@
 import { range, interval, Observable, Subscription } from "rxjs";
-import { filter, map, take, takeUntil } from "rxjs/operators";
+import { filter, map, take, takeUntil } from "rxjs";
 
 function execRange(): Subscription {
   return range(1, 100)

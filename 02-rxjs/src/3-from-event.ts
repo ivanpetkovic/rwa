@@ -1,11 +1,5 @@
 import { fromEvent } from "rxjs";
-import {
-  debounceTime,
-  filter,
-  map,
-  sampleTime,
-  switchMap,
-} from "rxjs/operators";
+import { debounceTime, filter, map, sampleTime, switchMap } from "rxjs";
 
 function logMouseMove() {
   fromEvent(document, "mousemove")

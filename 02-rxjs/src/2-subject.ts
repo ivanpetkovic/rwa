@@ -1,5 +1,5 @@
 import { interval, Observable, Subject } from "rxjs";
-import { map, takeUntil } from "rxjs/operators";
+import { map, takeUntil } from "rxjs";
 
 function execIntervalUntil(observable$: Observable<any>) {
   interval(500)

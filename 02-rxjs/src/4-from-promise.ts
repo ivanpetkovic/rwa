@@ -1,12 +1,5 @@
 import { fromEvent, from } from "rxjs";
-import {
-  debounceTime,
-  map,
-  filter,
-  switchMap,
-  catchError,
-  repeat,
-} from "rxjs/operators";
+import { debounceTime, map, filter, switchMap, catchError, repeat } from "rxjs";
 
 const URL = "http://localhost:3000/movies/";
 

@@ -1,5 +1,5 @@
 import { timer, forkJoin, zip, interval, from, combineLatest, merge } from "rxjs";
-import { map, take } from "rxjs/operators";
+import { map, take } from "rxjs";
 
 // kombinacioni operatori
 
