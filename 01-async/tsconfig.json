@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
     "noImplicitAny": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "module": "esnext",
-    "target": "es2017",
-    "jsx": "react",
-    "allowJs": true
+    "target": "esnext",
+    "allowJs": true,
+    "isolatedModules": true
   }
 }
