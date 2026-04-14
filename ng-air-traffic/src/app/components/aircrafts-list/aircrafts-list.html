@@ -1,0 +1,8 @@
+@for (aircraft of aircrafts(); track aircraft.aircraftId) {
+  <div class="aircraft-item">
+    <h3>{{ aircraft.name }}</h3>
+    <p>ID: {{ aircraft.aircraftId }}</p>
+    <p>Speed: {{ aircraft.speed }} mph</p>
+    <p>Altitude: {{ aircraft.attitude }} ft</p>
+  </div>
+}
