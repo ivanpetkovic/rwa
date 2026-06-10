@@ -1,0 +1,14 @@
+{
+  "aircrafts": [
+    { "id": "AC001", "aircraftType": "Boeing 737", "speed": 850, "attitude": 10000 },
+    { "id": "AC002", "aircraftType": "Airbus A320", "speed": 820, "attitude": 11000 },
+    { "id": "AC003", "aircraftType": "Boeing 777", "speed": 905, "attitude": 12000 },
+    { "id": "AC004", "aircraftType": "Airbus A380", "speed": 903, "attitude": 13000 },
+    { "id": "AC005", "aircraftType": "Boeing 787 Dreamliner", "speed": 903, "attitude": 12500 },
+    { "id": "AC006", "aircraftType": "Embraer E175", "speed": 870, "attitude": 9000 },
+    { "id": "AC007", "aircraftType": "Bombardier CRJ900", "speed": 830, "attitude": 8500 },
+    { "id": "AC008", "aircraftType": "Airbus A350", "speed": 910, "attitude": 13500 },
+    { "id": "AC009", "aircraftType": "Boeing 747", "speed": 920, "attitude": 11500 },
+    { "id": "AC010", "aircraftType": "Cessna 172", "speed": 226, "attitude": 4000 }
+  ]
+}

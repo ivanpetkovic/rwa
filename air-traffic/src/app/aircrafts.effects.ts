@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { loadAircrafts, loadAircraftsFail, loadAircraftsSuccess } from './store/aircraft.actions';
 import { catchError, map, mergeMap, of, switchMap } from 'rxjs';
@@ -9,10 +9,8 @@ const API_URL = 'http://localhost:3000/aircrafts';
 
 @Injectable()
 export class AircraftsEffects {
-  constructor(
-    private actions$: Actions,
-    private http: HttpClient,
-  ) {}
+  private http = inject(HttpClient);
+  private actions$ = inject(Actions);
 
   loadAircrafts$ = createEffect(() =>
     this.actions$.pipe(

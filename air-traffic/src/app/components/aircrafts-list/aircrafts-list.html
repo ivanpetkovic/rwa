@@ -1,9 +1,9 @@
 <p>List of aircrafts</p>
-@for (aircraft of aircrafts(); track aircraft.id) {
-    <app-aircraft-profile 
-        [aircraftId]="aircraft.id"
-        [aircraftType]="aircraft.aircraftType"
-        [attitude]="aircraft.attitude"
-        [speed]="aircraft.speed"
-    ></app-aircraft-profile>
+@for (aircraft of list$ | async; track aircraft.id) {
+<app-aircraft-profile
+  [aircraftId]="aircraft.id"
+  [aircraftType]="aircraft.aircraftType"
+  [attitude]="aircraft.attitude"
+  [speed]="aircraft.speed"
+></app-aircraft-profile>
 }

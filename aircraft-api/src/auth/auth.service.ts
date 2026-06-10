@@ -8,6 +8,7 @@ export class AuthService {
 
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.findOne(username);
+    // password se nikad ne pamti, vec hashiraj (vidi sledeci commit)
     if (user && user.password === pass) {
       const { password, ...result } = user;
       return result;
