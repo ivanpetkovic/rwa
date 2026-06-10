@@ -645,6 +645,7 @@ GET /aircrafts          — all aircraft (paginated)
 GET /aircrafts?search=Boeing&skip=0&take=10  — filtered
 GET /aircrafts/:id      — single by ID
 
+
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { AircraftService } from './aircraft.service';
 
@@ -721,3 +722,82 @@ Next logical phase:
 * error handling (NotFoundException, filters)
 * update and delete endpoints
 * auth (JWT, Passport)
+
+Step 11. Add Passport.js
+
+nest g module auth
+nest g service auth
+nest g module users
+nest g service users
+
+
+Step 12. Adding a User
+
+enum UserRole {
+  ADMIN
+  MEMBER
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  password String
+
+  role     UserRole @default(MEMBER)
+
+  createdAt DateTime @default(now())
+}
+
+npx prisma migrate dev --name add_user_roles
+
+Step 13. Add a Role guard
+
+import {
+  Injectable,
+  CanActivate,
+  ExecutionContext,
+} from '@nestjs/common';
+
+import { Reflector } from '@nestjs/core';
+
+@Injectable()
+export class RolesGuard implements CanActivate {
+  constructor(
+    private reflector: Reflector,
+  ) {}
+
+  canActivate(
+    context: ExecutionContext,
+  ): boolean {
+    const requiredRoles =
+      this.reflector.getAllAndOverride<string[]>(
+        'roles',
+        [
+          context.getHandler(),
+          context.getClass(),
+        ],
+      );
+
+    if (!requiredRoles) {
+      return true;
+    }
+
+    const request =
+      context.switchToHttp().getRequest();
+
+    const user = request.user;
+
+    return requiredRoles.includes(
+      user.role,
+    );
+  }
+}
+
+Register it in main.ts or per-controller
+
+@UseGuards(
+  JwtAuthGuard,
+  RolesGuard,
+)
+
+Step 14. 

@@ -1,8 +1,10 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { AircraftService } from './aircraft.service';
 import type { Aircraft } from './aircraft.model';
+import { RolesGuard } from 'src/auth/roles.guard';
 
 @Controller('aircrafts')
+@UseGuards(RolesGuard)
 export class AircraftController {
     constructor(private service: AircraftService) {
 
@@ -24,6 +26,7 @@ export class AircraftController {
         return this.service.aircraft({ id: Number(id)});
     }
 
+    // @Roles
     @Post()
     addAircraft(@Body() aircraft: Aircraft) {
         return this.service.createAircraft(aircraft);
